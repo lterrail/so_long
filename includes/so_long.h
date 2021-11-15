@@ -80,7 +80,7 @@ int			        ft_event_key(int keycode, t_proj *proj);
 
 int                 ft_parse_ber_file(t_proj *proj, char *filename);
 
-void                ft_parse_xpm_file(t_proj *proj);
+int                ft_parse_xpm_file(t_proj *proj);
 
 
 #endif

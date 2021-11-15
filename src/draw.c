@@ -1,6 +1,5 @@
 #include "so_long.h"
 
-
 static void ft_draw_block(t_proj *proj, int y, int x)
 {
     int x_win;
@@ -22,17 +21,13 @@ static void ft_draw_block(t_proj *proj, int y, int x)
 			proj->door_img, x_win, y_win);
 }
 
-
-// itere sur toute la map (.ber file)
-// pour chaque lettre de la map, ajoute dans l'image le block entier xpm
-void ft_draw(t_proj *proj)
+void        ft_draw(t_proj *proj)
 {
     int y;
     int x;
 
-	mlx_clear_window(proj->mlx, proj->win);
-
     y = 0;
+	mlx_clear_window(proj->mlx, proj->win);
     while (proj->map[y])
     {
         x = 0;

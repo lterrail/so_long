@@ -51,15 +51,16 @@ static int ft_find_extension(char *filename, char *extension)
 int main(int ac, char **av)
 {
 	t_proj		*proj;
-    int         error;
+    int         err;
 
     if (ac != 2 || !ft_find_extension(av[1], ".ber"))
         ft_exit(NULL, ERROR_USAGE);
     if (!(proj = ft_init_proj()))
         ft_exit(NULL, ERROR_MALLOC);
-    if ((error = ft_parse_ber_file(proj, av[1])) < 0)
-        ft_exit(proj, error);
-    ft_parse_xpm_file(proj);
+    if ((err = ft_parse_ber_file(proj, av[1])) < 0)
+        ft_exit(proj, err);
+    if ((err = ft_parse_xpm_file(proj)) < 0)
+        ft_exit(proj, err);
     proj->win = mlx_new_window(proj->mlx, proj->width_win,
         proj->height_win, "so_long");
     ft_draw(proj);

@@ -43,6 +43,6 @@ int			ft_event_key(int keycode, t_proj *proj)
 		ft_key_move(proj, proj->carac_pos_x + 1, proj->carac_pos_y);
 	if (!(nb_move = ft_itoa(proj->nb_move)))
 		return (ERROR);
-	mlx_string_put(proj->mlx, proj->win, 160, 40, 0xFFFFFF, nb_move);
+	mlx_string_put(proj->mlx, proj->win, 160, 100, 0xFFFFFF, nb_move);
 	return (SUCCESS);
 }
