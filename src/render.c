@@ -1,6 +1,9 @@
 #include "so_long.h"
 
-static void ft_draw_block(t_proj *proj, int y, int x)
+/*
+ft_render_block rajoute  chaque block d'image dans la window
+*/
+static void ft_render_block(t_proj *proj, int y, int x)
 {
     int x_win;
     int y_win;
@@ -21,7 +24,11 @@ static void ft_draw_block(t_proj *proj, int y, int x)
 			proj->door_img, x_win, y_win);
 }
 
-void        ft_draw(t_proj *proj)
+/*
+ft_draw nettoie la précédente window puis parcourt chaque index
+de la map pour y rajouter les blocks d'image
+*/
+void        ft_render(t_proj *proj)
 {
     int y;
     int x;
@@ -33,7 +40,7 @@ void        ft_draw(t_proj *proj)
         x = 0;
         while (proj->map[y][x])
         {
-            ft_draw_block(proj, y, x);
+            ft_render_block(proj, y, x);
             x++;
         }
         y++;

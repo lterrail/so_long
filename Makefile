@@ -1,6 +1,6 @@
 NAME	= so_long
 
-SRC	=	draw.c						\
+SRC	=	render.c					\
 		exit.c						\
 		key.c						\
 		main.c						\

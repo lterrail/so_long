@@ -1,5 +1,8 @@
 #include "so_long.h"
 
+/*
+ft_free_map free proj->map (**char)
+*/
 static void ft_free_map(char **map, int height_map)
 {
     int i;
@@ -11,6 +14,10 @@ static void ft_free_map(char **map, int height_map)
     free(map);
 }
 
+/*
+ft_print_error parse le type d'erreur et print
+le  message correspondant sur la sortie  d'erreur
+*/
 static void ft_print_error(int err)
 {
 	if (err == ERROR_MALLOC)
@@ -33,20 +40,26 @@ static void ft_print_error(int err)
 		return ;
 } 
 
+/*
+ft_exit print l'erreur puis 
+essaie de free tous les pointeurs de proj
+*/
 void ft_exit(t_proj *proj, int err)
 {
     ft_print_error(err);
-    if (proj->map)
-        ft_free_map(proj->map, proj->height_map);
-	if (proj->door_img)
-		free(proj->door_img);
-	if (proj->wall_img)
-		free(proj->wall_img);
-	if (proj->collectable_img)
-		free(proj->collectable_img);
-	if (proj->player_img)
-		free(proj->player_img);
 	if (proj)
+	{
+		if (proj->map)
+			ft_free_map(proj->map, proj->height_map);
+		if (proj->door_img)
+			free(proj->door_img);
+		if (proj->wall_img)
+			free(proj->wall_img);
+		if (proj->collectable_img)
+			free(proj->collectable_img);
+		if (proj->player_img)
+			free(proj->player_img);
 		free(proj);
+	}
 	exit(0);
 }

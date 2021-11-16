@@ -1,5 +1,8 @@
 #include "so_long.h"
 
+/*
+ft_parse_xpm_file load les fichiers xpm dans des pointeurs
+*/
 int ft_parse_xpm_file(t_proj *proj)
 {
     proj->img_size = IMG_SIZE;

@@ -32,11 +32,11 @@
 # define ERROR_INVALID_CHAR         -8
 # define ERROR_USAGE                -9
 
-# define KEY_W 13
-# define KEY_S 1
-# define KEY_A 0
-# define KEY_D 2
-# define ESC 53
+# define KEY_W                      13
+# define KEY_S                       1
+# define KEY_A                       0
+# define KEY_D                       2
+# define ESC                        53
 
 
 typedef struct		s_img
@@ -70,7 +70,7 @@ typedef struct		s_proj
     void            *wall_img;
 }					t_proj;
 
-void                ft_draw(t_proj *proj);
+void                ft_render(t_proj *proj);
 
 void                ft_exit(t_proj *proj, int error);
 
@@ -80,7 +80,7 @@ int			        ft_event_key(int keycode, t_proj *proj);
 
 int                 ft_parse_ber_file(t_proj *proj, char *filename);
 
-int                ft_parse_xpm_file(t_proj *proj);
+int                 ft_parse_xpm_file(t_proj *proj);
 
 
 #endif

@@ -61,10 +61,19 @@ int main(int ac, char **av)
         ft_exit(proj, err);
     if ((err = ft_parse_xpm_file(proj)) < 0)
         ft_exit(proj, err);
+
+    
+    // creation du pointeur de la window avec les dimensions
     proj->win = mlx_new_window(proj->mlx, proj->width_win,
         proj->height_win, "so_long");
-    ft_draw(proj);
+    
+    // premier render
+    ft_render(proj);
+
+    // declaration de la fonction de gestion des events du clavier
     mlx_key_hook(proj->win, ft_event_key, proj);
+
+    // boucle infinie pour laisser la window up à l'écran
 	mlx_loop(proj->mlx);
     return (SUCCESS);
 }
