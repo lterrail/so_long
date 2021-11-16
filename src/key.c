@@ -65,9 +65,10 @@ int			ft_event_key(int keycode, t_proj *proj)
 
 	// transformation de nb_move de int a char*
 	if (!(nb_move = ft_itoa(proj->nb_move)))
-		return (ERROR);
+		return (ERROR_MALLOC);
 	
 	// pour pouvoir l'afficher dans la window
 	mlx_string_put(proj->mlx, proj->win, 160, 100, 0xFFFFFF, nb_move);
+	free(nb_move)
 	return (SUCCESS);
 }
